@@ -1,4 +1,4 @@
-const helloWorldController = require('./helloWorldController');
+const helloWorldController = require('./helloWorld.controller');
 
 module.exports = {
   ...helloWorldController

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const helloWorldRoute = require('./helloWorldRoute');
+const helloWorldRoute = require('./helloWorld.route');
 
 router.use('/', helloWorldRoute);
 
