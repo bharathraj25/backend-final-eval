@@ -5,11 +5,10 @@ const { HttpError, NotFoundError } = require('../errors');
 
 module.exports = {
   handleErrors(err, req, res, next) {
+    console.log('Error >>>>', err);
     if (res.headersSent) {
       return next(err);
     }
-
-    console.error(err);
     switch (err.constructor) {
     case joi.ValidationError:
     case sequelize.UniqueConstraintError:
