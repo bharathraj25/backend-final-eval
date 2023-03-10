@@ -13,28 +13,23 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsTo(models.Content, {
         as: 'content',
-        foreignKey: 'content_id'
-      });
-      this.belongsTo(models.ContentType, {
-        as: 'type',
-        foreignKey: 'type_id'
+        foreignKey: 'id'
       });
     }
   }
   ContentData.init({
-    data_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     content_id: {
       type: DataTypes.INTEGER,
-      unique: true
     },
-    type_id: {
-      type: DataTypes.INTEGER,
-      unique: true
+    data: {
+      type: DataTypes.TEXT,
+      get: function () {
+        return JSON.parse(this.getDataValue("data"));
+      },
+      set: function (value) {
+        return this.setDataValue("data", JSON.stringify(value));
+      }
     },
-    value: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'ContentData',

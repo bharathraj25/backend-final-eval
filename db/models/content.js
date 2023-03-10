@@ -13,23 +13,24 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.hasMany(models.ContentType, {
         as: 'types',
-        foreignKey: 'content_id'
+        foreignKey: 'content_id',
+        onDelete: 'cascade'
       });
       this.hasMany(models.ContentData, {
         as: 'datas',
-        foreignKey: 'content_id'
+        foreignKey: 'content_id',
+        onDelete: 'cascade'
       });
     }
   }
   Content.init({
-    content_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     content_name: {
       type: DataTypes.STRING,
       unique: true
-    }
+    },
+    user_email: {
+      type: DataTypes.STRING,
+    },
   }, {
     sequelize,
     modelName: 'Content',

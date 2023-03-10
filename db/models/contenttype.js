@@ -13,22 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsTo(models.Content, {
         as: 'content',
-        foreignKey: 'content_id'
-      });
-      this.hasMany(models.ContentData, {
-        as: 'datas',
-        foreignKey: 'type_id'
+        foreignKey: 'id'
       });
     }
   }
   ContentType.init({
-    type_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     content_id: {
       type: DataTypes.INTEGER,
-      unique: true
     },
     type_name: {
       type: DataTypes.STRING,
