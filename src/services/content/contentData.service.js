@@ -20,8 +20,30 @@ const updateContentDataById = async (contentId, dataId, data) => {
     ...newContentData['data'],
     ...data
   };
-  newContentData.save();
+  await newContentData.save();
   return newContentData;
+};
+
+const deleteTypeObjectValueFromData = async (contentId, prevTypeName, newTypeName) => {
+  const allContentData = await db.ContentData.findAll({
+    'where': {
+      content_id: contentId
+    }
+  });
+
+  const updateDataPromise = allContentData.map(async data => {
+    const updateData = data['data'];
+    console.log(updateData, prevTypeName, newTypeName);
+    if (prevTypeName) delete updateData[prevTypeName];
+    if (newTypeName) updateData[newTypeName] = data.data[prevTypeName];
+    console.log(updateData);
+    data.data = updateData;
+    await data.save();
+  });
+
+  await Promise.all(updateDataPromise);
+
+  return allContentData;
 };
 
 const deleteContentDataById = async (contentId, dataId) => {
@@ -41,5 +63,6 @@ const deleteContentDataById = async (contentId, dataId) => {
 module.exports = {
   createContentData,
   updateContentDataById,
-  deleteContentDataById
+  deleteContentDataById,
+  deleteTypeObjectValueFromData
 };

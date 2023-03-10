@@ -33,7 +33,7 @@ const updateContentNameById = async (contentId, contentName, email) => {
     throw new HttpError(403, `content with contentId: ${contentId} - Not Accessable.`);
   }
   newContent['content_name'] = contentName;
-  newContent.save();
+  await newContent.save();
   return newContent;
 };
 
