@@ -1,20 +1,6 @@
 const db = require('../../../db/models');
 const errors = require('../../errors');
 
-const getAllContentDatas = async (contentId) => {
-  const data = await db.ContentData.findAll({
-    'where': {
-      'content_id': contentId
-    },
-    order: [
-      ['id', 'ASC']
-    ],
-    include: [
-      { model: db.Content, as: 'content' }
-    ]
-  });
-  return data;
-};
 
 const createContentData = async (data, contentId, typeId) => {
   const newContentData = await db.ContentData.create({
@@ -53,7 +39,6 @@ const deleteContentDataById = async (contentId, dataId) => {
 };
 
 module.exports = {
-  getAllContentDatas,
   createContentData,
   updateContentDataById,
   deleteContentDataById

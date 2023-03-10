@@ -1,14 +1,14 @@
 const db = require('../../../db/models');
 const errors = require('../../errors');
 
-const getAllContentTypes = async (contentId) => {
-  const types = await db.ContentType.findAll({
-    'where': {
-      'content_id': contentId
-    }
-  });
-  return types;
-};
+// const getAllContentTypes = async (contentId) => {
+//   const types = await db.ContentType.findAll({
+//     'where': {
+//       'content_id': contentId
+//     }
+//   });
+//   return types;
+// };
 
 const createContentType = async (type, contentId) => {
   const newContentType = await db.ContentType.create({
@@ -46,7 +46,7 @@ const deleteContentTypeById = async (contentId, typeId) => {
 };
 
 module.exports = {
-  getAllContentTypes,
+  // getAllContentTypes,
   createContentType,
   updateContentTypeById,
   deleteContentTypeById
