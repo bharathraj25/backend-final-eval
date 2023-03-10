@@ -1,14 +1,14 @@
 const contentDataServices = require('../../services/content/contentData.service');
 
-const getAllDatasControllerById = async (req, res, next) => {
-  try {
-    const { contentId } = req.query;
-    const result = await contentDataServices.getAllContentDatas(contentId);
-    res.status(200).json(result);
-  } catch (err) {
-    next(err);
-  }
-};
+// const getAllDatasControllerById = async (req, res, next) => {
+//   try {
+//     const { contentId } = req.query;
+//     const result = await contentDataServices.getAllContentDatas(contentId);
+//     res.status(200).json(result);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 const createContentDataControllerById = async (req, res, next) => {
   try {
@@ -43,7 +43,7 @@ const deleteContentDataControllerById = async (req, res, next) => {
 };
 
 module.exports = {
-  getAllDatasControllerById,
+  // getAllDatasControllerById,
   createContentDataControllerById,
   updateContentDataControllerById,
   deleteContentDataControllerById

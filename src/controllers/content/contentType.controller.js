@@ -1,14 +1,14 @@
 const contentTypeServices = require('../../services/content/contentType.service');
 
-const getAllTypesControllerById = async (req, res, next) => {
-  try {
-    const { contentId } = req.query;
-    const result = await contentTypeServices.getAllContentTypes(contentId);
-    res.status(200).json(result);
-  } catch (err) {
-    next(err);
-  }
-};
+// const getAllTypesControllerById = async (req, res, next) => {
+//   try {
+//     const { contentId } = req.query;
+//     const result = await contentTypeServices.getAllContentTypes(contentId);
+//     res.status(200).json(result);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 const createContentTypeControllerById = async (req, res, next) => {
   try {
@@ -43,7 +43,7 @@ const deleteContentTypeControllerById = async (req, res, next) => {
 };
 
 module.exports = {
-  getAllTypesControllerById,
+  // getAllTypesControllerById,
   createContentTypeControllerById,
   updateContentTypeControllerById,
   deleteContentTypeControllerById

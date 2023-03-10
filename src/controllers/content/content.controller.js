@@ -33,20 +33,20 @@ const updateContentController = async (req, res, next) => {
   }
 };
 
-const deleteContentController = async (req, res, next) => {
-  try {
-    const email = req.email;
-    const { contentId } = req.params;
-    await contentServices.deleteContentById(contentId, email);
-    res.status(204).end();
-  } catch (err) {
-    next(err);
-  }
-};
+// const deleteContentController = async (req, res, next) => {
+//   try {
+//     const email = req.email;
+//     const { contentId } = req.params;
+//     await contentServices.deleteContentById(contentId, email);
+//     res.status(204).end();
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 module.exports = {
   getAllContentsController,
   createContentController,
   updateContentController,
-  deleteContentController
+  // deleteContentController
 };
