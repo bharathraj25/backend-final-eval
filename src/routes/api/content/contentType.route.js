@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const contentTypeControllers = require('../../../controllers/content/contentType.controller');
 
-router.get('/', contentTypeControllers.getAllTypesControllerById);
+// router.get('/', contentTypeControllers.getAllTypesControllerById);
 
 router.post('/', contentTypeControllers.createContentTypeControllerById);
 

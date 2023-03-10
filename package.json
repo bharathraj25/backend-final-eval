@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon ./src/index.js",
     "dev": "nodemon ./src/index.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "NODE_ENV=development jest",
+    "test:coverage": "NODE_ENV=development jest --coverage",
     "migrate": "npx sequelize-cli db:migrate",
     "lint": "eslint . --ext .js --fix"
   },

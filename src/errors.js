@@ -1,9 +1,9 @@
-class InvalidInputError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = 'InvalidInputError';
-  }
-}
+// class InvalidInputError extends Error {
+//   constructor(message) {
+//     super(message);
+//     this.name = 'InvalidInputError';
+//   }
+// }
 
 class NotFoundError extends Error {
   constructor(message) {
@@ -12,12 +12,12 @@ class NotFoundError extends Error {
   }
 }
 
-class RequiredKeyError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = 'RequiredKeyError';
-  }
-}
+// class RequiredKeyError extends Error {
+//   constructor(message) {
+//     super(message);
+//     this.name = 'RequiredKeyError';
+//   }
+// }
 
 class HttpError extends Error {
   constructor(status, message) {
@@ -29,8 +29,8 @@ class HttpError extends Error {
 
 
 module.exports = {
-  InvalidInputError,
+  // InvalidInputError,
   NotFoundError,
-  RequiredKeyError,
+  // RequiredKeyError,
   HttpError
 };
