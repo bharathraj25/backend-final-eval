@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { getHelloWorld } = require('../../controllers');
+const helloWorldController = require('../../controllers/helloWorld.controller');
 
-router.get('/', getHelloWorld);
+router.get('/', helloWorldController.getHelloWorld);
 
 module.exports = router;
