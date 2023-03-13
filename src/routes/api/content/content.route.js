@@ -16,7 +16,7 @@ router.post(
 
 router.patch(
   '/:contentId',
-  joiValidator(contentSchema.param, 'param'),
+  joiValidator(contentSchema.param, 'params'),
   joiValidator(contentSchema.update),
   contentControllers.updateContentController
 );

@@ -13,14 +13,14 @@ router.post(
 
 router.patch(
   '/:dataId',
-  joiValidator(contentDataSchema.param, 'param'),
+  joiValidator(contentDataSchema.param, 'params'),
   joiValidator(contentDataSchema.update),
   contentDataControllers.updateContentDataControllerById
 );
 
 router.delete(
   '/:dataId',
-  joiValidator(contentDataSchema.param, 'param'),
+  joiValidator(contentDataSchema.param, 'params'),
   joiValidator(contentDataSchema.delete),
   contentDataControllers.deleteContentDataControllerById
 );

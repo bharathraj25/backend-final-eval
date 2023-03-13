@@ -13,15 +13,15 @@ router.post(
 
 router.patch(
   '/:typeId',
-  joiValidator(contentTypeSchema.param, 'param'),
+  joiValidator(contentTypeSchema.param, 'params'),
   joiValidator(contentTypeSchema.update),
   contentTypeControllers.updateContentTypeControllerById
 );
 
 router.delete(
   '/:typeId',
-  joiValidator(contentTypeSchema.param, 'param'),
-  joiValidator(contentTypeSchema.delete),
+  joiValidator(contentTypeSchema.param, 'params'),
+  // joiValidator(contentTypeSchema.delete),
   contentTypeControllers.deleteContentTypeControllerById
 );
 

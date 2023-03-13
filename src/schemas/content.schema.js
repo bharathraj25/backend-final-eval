@@ -2,31 +2,19 @@ const joi = require('joi');
 
 module.exports = {
   createNew: joi.object({
-    contentId: joi
+    contentName: joi
       .string()
       .required(),
-    data: joi
-      .object()
-      .required()
   }),
 
   param: joi.object({
-    dataId: joi
-      .string()
+    contentId: joi
+      .number()
       .required()
   }),
 
   update: joi.object({
-    contentId: joi
-      .string()
-      .required(),
-    data: joi
-      .object()
-      .required()
-  }),
-
-  delete: joi.object({
-    contentId: joi
+    contentName: joi
       .string()
       .required()
   })
